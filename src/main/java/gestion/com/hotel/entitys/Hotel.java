@@ -18,7 +18,8 @@ import jakarta.persistence.OneToMany;
 public class Hotel {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id_hotel;
+    @Column(name = "id_hotel")
+    private Long idHotel;
     
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -64,12 +65,12 @@ public class Hotel {
 
     }
 
-    public Long getId_hotel() {
-        return id_hotel;
+    public Long getIdHotel() {
+        return idHotel;
     }
 
-    public void setId_hotel(Long id_hotel) {
-        this.id_hotel = id_hotel;
+    public void setIdHotel(Long idHotel) {
+        this.idHotel = idHotel;
     }
 
     public String getNombre() {

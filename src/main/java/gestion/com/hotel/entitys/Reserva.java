@@ -20,7 +20,7 @@ import jakarta.persistence.OneToMany;
 public class Reserva {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id_reserva;
+    private Long idReserva;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario", nullable = false)
@@ -50,11 +50,11 @@ public class Reserva {
 
     }
 
-    public Long getId_reserva() {
-        return id_reserva;
+    public Long getIdReserva() {
+        return idReserva;
     }
-    public void setId_reserva(Long id_reserva) {
-        this.id_reserva = id_reserva;
+    public void setIdReserva(Long idReserva) {
+        this.idReserva = idReserva;
     }
     public Usuario getUsuario() {
         return usuario;

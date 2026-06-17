@@ -12,7 +12,8 @@ import jakarta.persistence.ManyToMany;
 public class Servicio {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id_servicio;
+    @Column(name = "id_servicio")
+    private Long idServicio;
 
     @Column(name = "nombre", nullable = false, unique = true)
     private String nombre;
@@ -36,12 +37,12 @@ public class Servicio {
 
     }
 
-    public Long getId_servicio() {
-        return id_servicio;
+    public Long getIdServicio() {
+        return idServicio;
     }
 
-    public void setId_servicio(Long id_servicio) {
-        this.id_servicio = id_servicio;
+    public void setIdServicio(Long idServicio) {
+        this.idServicio = idServicio;
     }
 
     public String getNombre() {

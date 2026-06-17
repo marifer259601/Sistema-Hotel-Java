@@ -16,7 +16,8 @@ import jakarta.persistence.ManyToOne;
 public class Factura {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id_factura;
+    @Column(name = "id_factura")
+    private Long idFactura;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_reserva", nullable = false)
@@ -36,12 +37,12 @@ public class Factura {
 
     }
 
-    public Long getId_factura() {
-        return id_factura;
+    public Long getIdFactura() {
+        return idFactura;
     }
 
-    public void setId_factura(Long id_factura) {
-        this.id_factura = id_factura;
+    public void setIdFactura(Long idFactura) {
+        this.idFactura = idFactura;
     }
 
     public Reserva getReserva() {

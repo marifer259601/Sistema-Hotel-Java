@@ -21,7 +21,8 @@ import jakarta.persistence.UniqueConstraint;
 public class Habitacion {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id_habitacion;
+    @Column(name = "id_habitacion")
+    private Long idHabitacion;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_hotel", nullable = false)
@@ -49,12 +50,12 @@ public class Habitacion {
     public Habitacion() {
     }
 
-    public Long getId_habitacion() {
-        return id_habitacion;
+    public Long getIdHabitacion() {
+        return idHabitacion;
     }
 
-    public void setId_habitacion(Long id_habitacion) {
-        this.id_habitacion = id_habitacion;
+    public void setIdHabitacion(Long idHabitacion) {
+        this.idHabitacion = idHabitacion;
     }
 
     public Hotel getHotel() {
