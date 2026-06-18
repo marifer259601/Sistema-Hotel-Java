@@ -2,6 +2,9 @@ package gestion.com.hotel.entitys;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,6 +21,7 @@ import jakarta.persistence.UniqueConstraint;
 @Table(name = "habitacion", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"id_hotel", "numero"})
 })
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Habitacion {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
@@ -45,6 +49,7 @@ public class Habitacion {
     private String observaciones;
 
     @OneToMany(mappedBy = "habitacion", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Reserva> reservas;
 
     public Habitacion() {
