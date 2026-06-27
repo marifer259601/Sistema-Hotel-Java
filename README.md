@@ -1,9 +1,8 @@
 📌 Archivo: src/main/resources/application.properties
-
-Después de la línea:
+# Después de la línea:
 spring.profiles.active=dev
 
-agregar lo siguiente:
+# Agregar lo siguiente:
 
 spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
