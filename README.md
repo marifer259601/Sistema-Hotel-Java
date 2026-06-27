@@ -1,8 +1,6 @@
 📌 Archivo: src/main/resources/application.properties
 
 Después de la línea:
-
-# Activamos el perfil de pruebas por defecto
 spring.profiles.active=dev
 
 agregar lo siguiente:
